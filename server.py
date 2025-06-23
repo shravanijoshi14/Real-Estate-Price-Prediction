@@ -18,7 +18,7 @@ def get_location_names():
 
     return response
 
-@app.route('/predict_home_price', methods=['POST'])
+@app.route('/api/predict_home_price', methods=['POST'])
 def predict_home_price():
 
     total_sqft = float(request.form['total_sqft'])
