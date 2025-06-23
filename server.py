@@ -1,10 +1,9 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
 import util
-app = Flask(__name__)
 
-from flask import Flask, render_template
-
-app = Flask(__name__, static_folder='client', template_folder='client')
+app = Flask(__name__, static_folder='../client', template_folder='../client')
+CORS(app)
 
 @app.route('/')
 def index():
@@ -19,7 +18,7 @@ def get_location_names():
 
     return response
 
-@app.route('/api/predict_home_price', methods=['POST'])
+@app.route('/predict_home_price', methods=['POST'])
 def predict_home_price():
 
     total_sqft = float(request.form['total_sqft'])
