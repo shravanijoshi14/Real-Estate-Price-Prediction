@@ -27,9 +27,9 @@ function onClickedEstimatePrice() {
   var estPrice = document.getElementById("uiEstimatedPrice");
 
   // var url = "http://127.0.0.1:5000/predict_home_price"; //Use this if you are NOT using nginx which is first 7 tutorials
-  var url = "https://real-estate-price-prediction-1-6qzh.onrender.com/api/predict_home_price"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
+  var url = "https://web-production-59839.up.railway.app//api/predict_home_price"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
 
-  $.post("https://real-estate-price-prediction-1-6qzh.onrender.com/api/predict_home_price", {
+  $.post("https://web-production-59839.up.railway.app//api/predict_home_price", {
       total_sqft: parseFloat(sqft.value),
       bhk: bhk,
       bath: bathrooms,
@@ -44,7 +44,7 @@ function onClickedEstimatePrice() {
 function onPageLoad() {
   console.log( "document loaded" );
   // var url = "http://127.0.0.1:5000/get_location_names"; // Use this if you are NOT using nginx which is first 7 tutorials
-  var url = "https://real-estate-price-prediction-1-6qzh.onrender.com/api/get_location_names"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
+  var url = "https://web-production-59839.up.railway.app//api/get_location_names"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
   $.get(url,function(data, status) {
       console.log("got response for get_location_names request");
       if(data) {
