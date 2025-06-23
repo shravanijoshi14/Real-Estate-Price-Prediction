@@ -29,16 +29,21 @@ def load_saved_artifacts():
     print("Loading saved artifacts...start")
     global __data_columns
     global __locations
+    global __model
 
+    # ✅ Get the absolute path of the current directory (where util.py is located)
     this_dir = os.path.dirname(__file__)
+
+    # ✅ Use absolute paths to load columns.json and model.pickle
     with open(os.path.join(this_dir, 'artifacts/columns.json'), 'r') as f:
         __data_columns = json.load(f)['data_columns']
         __locations = __data_columns[3:]
 
-    global __model
     with open(os.path.join(this_dir, 'artifacts/banglore_home_prices_model.pickle'), 'rb') as f:
         __model = pickle.load(f)
-        print("Loading saved artifacts...done")
+
+    print("Loading saved artifacts...done")
+
 
 if __name__ == '__main__':
     load_saved_artifacts()
