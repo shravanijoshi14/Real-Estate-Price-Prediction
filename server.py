@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import util
+util.load_saved_artifacts()
 
 app = Flask(__name__, static_folder='client', template_folder='client')
 CORS(app)
