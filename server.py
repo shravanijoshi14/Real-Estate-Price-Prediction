@@ -2,6 +2,14 @@ from flask import Flask, request, jsonify
 import util
 app = Flask(__name__)
 
+from flask import Flask, render_template
+
+app = Flask(__name__, static_folder='client', template_folder='client')
+
+@app.route('/')
+def index():
+    return render_template('app.html')
+
 @app.route('/get_location_names')
 def get_location_names():
     response = jsonify({
