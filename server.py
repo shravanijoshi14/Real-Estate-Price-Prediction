@@ -10,7 +10,7 @@ app = Flask(__name__, static_folder='client', template_folder='client')
 def index():
     return render_template('app.html')
 
-@app.route('/get_location_names')
+@app.route('/api/get_location_names')
 def get_location_names():
     response = jsonify({
         'locations': util.get_location_names()
@@ -19,7 +19,7 @@ def get_location_names():
 
     return response
 
-@app.route('/predict_home_price', methods=['POST'])
+@app.route('/api/predict_home_price', methods=['POST'])
 def predict_home_price():
 
     total_sqft = float(request.form['total_sqft'])
